@@ -1,0 +1,15 @@
+mixin file(name, value)
+  .card.small
+    .card-image
+      if value
+        img(src='/img/#{name}/#{value}')
+    .card-content
+      .input-field.file-field
+        .btn
+          block
+          input(type="file", name=name, id=name)
+        .file-path-wrapper
+          if value
+            input.file-path(type="text", placeholder='заменить текущую обложку')
+          else
+            input.file-path(type="text", placeholder='загрузить обложку')
